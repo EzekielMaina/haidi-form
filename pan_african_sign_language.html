@@ -1,0 +1,292 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.form-wrap{max-width:660px;margin:0 auto;padding:1.5rem 0}
+.form-header{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;margin-bottom:1rem}
+.header-bar{height:10px;background:#1D9E75}
+.header-body{padding:1.25rem 1.5rem}
+.form-title{font-size:22px;font-weight:500;color:var(--color-text-primary);margin-bottom:.5rem}
+.form-sub{font-size:14px;color:var(--color-text-secondary);line-height:1.6}
+.progress-row{display:flex;align-items:center;gap:12px;margin-bottom:1.25rem}
+.progress-label{font-size:13px;color:var(--color-text-secondary);white-space:nowrap}
+.progress-bar-bg{flex:1;height:4px;background:var(--color-background-secondary);border-radius:2px}
+.progress-fill{height:4px;background:#1D9E75;border-radius:2px;transition:width .3s}
+.page{display:none}
+.page.active{display:block}
+.section-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem 1.5rem;margin-bottom:.75rem}
+.section-title{font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:#0F6E56;margin-bottom:1rem}
+.q-block{margin-bottom:1.25rem}
+.q-block:last-child{margin-bottom:0}
+.q-label{font-size:15px;color:var(--color-text-primary);margin-bottom:.5rem;line-height:1.5}
+.q-required{color:#D85A30;margin-left:3px}
+.q-hint{font-size:13px;color:var(--color-text-secondary);margin-bottom:.5rem;line-height:1.5}
+input[type=text],input[type=url],select,textarea{width:100%;font-size:14px;color:var(--color-text-primary);background:transparent;border:none;border-bottom:1.5px solid var(--color-border-secondary);padding:6px 0;outline:none;font-family:var(--font-sans)}
+input[type=text]:focus,input[type=url]:focus,select:focus,textarea:focus{border-bottom-color:#1D9E75}
+textarea{resize:vertical;min-height:70px}
+select{appearance:none;background:transparent}
+.radio-group,.check-group{display:flex;flex-direction:column;gap:8px}
+.radio-opt,.check-opt{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:14px;color:var(--color-text-primary);line-height:1.5}
+.radio-opt input,.check-opt input{margin-top:3px;accent-color:#1D9E75;flex-shrink:0}
+.other-input{margin-top:6px;padding-left:24px}
+.nav-row{display:flex;justify-content:space-between;align-items:center;margin-top:1.5rem}
+.btn{padding:9px 22px;border-radius:var(--border-radius-md);font-size:14px;font-weight:500;cursor:pointer;border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-primary);transition:background .15s}
+.btn:hover{background:var(--color-background-secondary)}
+.btn-primary{background:#1D9E75;color:#fff;border-color:#1D9E75}
+.btn-primary:hover{background:#0F6E56;border-color:#0F6E56}
+.page-indicator{font-size:13px;color:var(--color-text-secondary)}
+.submit-note{font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin-top:.75rem;text-align:center}
+</style>
+
+<div class="form-wrap">
+  <div class="form-header">
+    <div class="header-bar"></div>
+    <div class="header-body">
+      <div class="form-title">Pan-African Sign Language Convening — Webinar Survey</div>
+      <div class="form-sub">This form gathers structured input from participants during the convening. Your responses will inform a shared research and innovation agenda for African sign languages. The form has three sections — please complete all pages.</div>
+    </div>
+  </div>
+
+  <div class="progress-row">
+    <span class="progress-label" id="prog-label">Page 1 of 3</span>
+    <div class="progress-bar-bg"><div class="progress-fill" id="prog-fill" style="width:33%"></div></div>
+  </div>
+
+  <!-- PAGE 1: Introduction & Audience -->
+  <div class="page active" id="page-1">
+    <div class="section-card">
+      <div class="section-title">Part 1 — Introduction & understanding the audience</div>
+
+      <div class="q-block">
+        <div class="q-label">Your full name <span class="q-required">*</span></div>
+        <input type="text" placeholder="First and last name">
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">Country you are based in <span class="q-required">*</span></div>
+        <input type="text" placeholder="e.g. Uganda, Ghana, South Africa">
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">Your primary role or affiliation <span class="q-required">*</span></div>
+        <div class="radio-group">
+          <label class="radio-opt"><input type="radio" name="role"> Researcher / academic</label>
+          <label class="radio-opt"><input type="radio" name="role"> Technologist / developer / AI practitioner</label>
+          <label class="radio-opt"><input type="radio" name="role"> Deaf community member or advocate</label>
+          <label class="radio-opt"><input type="radio" name="role"> Sign language interpreter or educator</label>
+          <label class="radio-opt"><input type="radio" name="role"> Policy or government representative</label>
+          <label class="radio-opt"><input type="radio" name="role"> NGO / civil society</label>
+          <label class="radio-opt"><input type="radio" name="role"> Other</label>
+        </div>
+        <div class="other-input"><input type="text" placeholder="Please specify"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">Which sign language(s) do you use, research, or work with? <span class="q-required">*</span></div>
+        <div class="q-hint">Select all that apply.</div>
+        <div class="check-group">
+          <label class="check-opt"><input type="checkbox"> Kenyan Sign Language (KSL)</label>
+          <label class="check-opt"><input type="checkbox"> South African Sign Language (SASL)</label>
+          <label class="check-opt"><input type="checkbox"> Nigerian Sign Language (NSL)</label>
+          <label class="check-opt"><input type="checkbox"> Ghanaian Sign Language (GSL)</label>
+          <label class="check-opt"><input type="checkbox"> American Sign Language (ASL) — used in some African contexts</label>
+          <label class="check-opt"><input type="checkbox"> Other African sign language(s)</label>
+        </div>
+        <div class="other-input"><input type="text" placeholder="Please name them"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">Is there a formally recognised or standardised sign language in your country? <span class="q-required">*</span></div>
+        <div class="radio-group">
+          <label class="radio-opt"><input type="radio" name="formal"> Yes — it is legally or officially recognised</label>
+          <label class="radio-opt"><input type="radio" name="formal"> Yes — it exists but has no formal legal status</label>
+          <label class="radio-opt"><input type="radio" name="formal"> No — sign language is used but not formalised</label>
+          <label class="radio-opt"><input type="radio" name="formal"> I am not certain</label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">Please tell us more about the sign language situation in your country.</div>
+        <div class="q-hint">This may include: how many Deaf people use it, how widely it is taught in schools, regional or community variation, or recognition challenges.</div>
+        <textarea placeholder="Share what you know about sign language use and recognition in your context…"></textarea>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">Innovations for hearing impairment</div>
+
+      <div class="q-block">
+        <div class="q-label">What innovations have you seen or worked on that develop assistive tools for people with hearing impairments? <span class="q-required">*</span></div>
+        <div class="q-hint">These may include apps, AI tools, educational platforms, translation tools, captioning systems, or hardware devices.</div>
+        <textarea style="min-height:90px" placeholder="Describe the innovation, who built it, and where it is being used…"></textarea>
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">What is your assessment of the impact of these innovations so far?</div>
+        <div class="radio-group">
+          <label class="radio-opt"><input type="radio" name="impact"> Very significant — they are widely adopted and effective</label>
+          <label class="radio-opt"><input type="radio" name="impact"> Promising — some adoption but limited reach</label>
+          <label class="radio-opt"><input type="radio" name="impact"> Early stage — still prototypes or pilots</label>
+          <label class="radio-opt"><input type="radio" name="impact"> Minimal — few innovations exist or reach users</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-row">
+      <span class="page-indicator">Page 1 of 3</span>
+      <button class="btn btn-primary" onclick="goTo(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2: Datasets -->
+  <div class="page" id="page-2">
+    <div class="section-card">
+      <div class="section-title">Part 2 — Datasets & research landscape</div>
+
+      <div class="q-block">
+        <div class="q-label">Are you aware of any sign language datasets that exist for your country or region? <span class="q-required">*</span></div>
+        <div class="radio-group">
+          <label class="radio-opt"><input type="radio" name="dataset-aware"> Yes</label>
+          <label class="radio-opt"><input type="radio" name="dataset-aware"> No</label>
+          <label class="radio-opt"><input type="radio" name="dataset-aware"> Not sure</label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">If yes, please name the dataset(s) and describe what they contain.</div>
+        <div class="q-hint">Include sign language name, country, type of data (video, glossary, annotations, etc.), and approximate size if known.</div>
+        <textarea placeholder="Dataset name — what it contains — who created it — approximate scale…"></textarea>
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">Please share a link to the dataset or dataset documentation if available.</div>
+        <input type="url" placeholder="https://…">
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">What is required for a researcher or innovator to access this dataset?</div>
+        <div class="check-group">
+          <label class="check-opt"><input type="checkbox"> Freely downloadable — no conditions</label>
+          <label class="check-opt"><input type="checkbox"> Requires registration or account creation</label>
+          <label class="check-opt"><input type="checkbox"> Requires data use agreement or licence</label>
+          <label class="check-opt"><input type="checkbox"> Requires ethics approval</label>
+          <label class="check-opt"><input type="checkbox"> Must contact the data holder directly</label>
+          <label class="check-opt"><input type="checkbox"> Not publicly accessible</label>
+          <label class="check-opt"><input type="checkbox"> I do not know the access conditions</label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">How comprehensive or accessible are existing sign language datasets for researchers and developers? <span class="q-required">*</span></div>
+        <div class="radio-group">
+          <label class="radio-opt"><input type="radio" name="access"> Highly accessible and well-documented</label>
+          <label class="radio-opt"><input type="radio" name="access"> Partially accessible — some barriers exist</label>
+          <label class="radio-opt"><input type="radio" name="access"> Difficult to access — significant barriers</label>
+          <label class="radio-opt"><input type="radio" name="access"> Essentially inaccessible or non-existent</label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">Please elaborate on barriers to access, if any.</div>
+        <textarea placeholder="e.g. language of documentation, cost, institutional gatekeeping, lack of metadata, format issues…"></textarea>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">Data needs for innovators</div>
+
+      <div class="q-block">
+        <div class="q-label">If you are building or have built an assistive tool, what kind of data did you need — and what did you have access to? <span class="q-required">*</span></div>
+        <div class="q-hint">Please describe: the innovation you were building → the data type you needed → what you actually had access to.</div>
+        <textarea style="min-height:100px" placeholder="Innovation: [describe tool]&#10;Data needed: [e.g. labelled video of KSL handshapes for 500 signs]&#10;Data available: [e.g. only a 200-sign glossary with no video]"></textarea>
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">What types of data would most accelerate innovation in African sign language technology?</div>
+        <div class="check-group">
+          <label class="check-opt"><input type="checkbox"> Labelled video corpora of continuous signing</label>
+          <label class="check-opt"><input type="checkbox"> Isolated sign glossaries with video</label>
+          <label class="check-opt"><input type="checkbox"> Annotated handshape or gesture datasets</label>
+          <label class="check-opt"><input type="checkbox"> Parallel corpora (sign language paired with spoken/written language)</label>
+          <label class="check-opt"><input type="checkbox"> Metadata-rich datasets (signer demographics, regional variety, context)</label>
+          <label class="check-opt"><input type="checkbox"> Educational content in sign language</label>
+          <label class="check-opt"><input type="checkbox"> Other</label>
+        </div>
+        <div class="other-input"><input type="text" placeholder="Please specify"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">What are the biggest gaps in research and data documentation of African sign languages? <span class="q-required">*</span></div>
+        <textarea style="min-height:90px" placeholder="e.g. No standardised annotation, very few languages documented, Deaf community not involved in data collection, no funding pipelines…"></textarea>
+      </div>
+    </div>
+
+    <div class="nav-row">
+      <button class="btn" onclick="goTo(1)">← Back</button>
+      <span class="page-indicator">Page 2 of 3</span>
+      <button class="btn btn-primary" onclick="goTo(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3: Recommendations -->
+  <div class="page" id="page-3">
+    <div class="section-card">
+      <div class="section-title">Part 3 — Recommendations & vision</div>
+
+      <div class="q-block">
+        <div class="q-label">How can existing research and datasets be better shared with innovators building apps, AI tools, and educational platforms so that technical work is linguistically accurate? <span class="q-required">*</span></div>
+        <div class="q-hint">Consider: repositories, licensing models, community-led curation, documentation standards, or intermediary organisations.</div>
+        <textarea style="min-height:100px" placeholder="Your recommendations for dissemination and access…"></textarea>
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">What infrastructure investments are most critical for advancing African sign language research and technology — and what are the first concrete steps to get there? <span class="q-required">*</span></div>
+        <div class="q-hint">This could include funding, data centres, community partnerships, standards bodies, training programmes, or policy.</div>
+        <textarea style="min-height:100px" placeholder="Priority infrastructure gaps → first concrete steps…"></textarea>
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">What does success look like in two years for sign language research and data across Africa? <span class="q-required">*</span></div>
+        <div class="q-hint">Be as specific as possible. What would be different about the landscape in 2027 if this convening catalysed real change?</div>
+        <textarea style="min-height:100px" placeholder="e.g. At least 10 African sign languages have open, labelled video datasets; a pan-African sign language data council is operational; three AI-powered tools have been deployed with Deaf community input…"></textarea>
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">Are you willing to be contacted for follow-up collaboration or to share resources after this convening?</div>
+        <div class="radio-group">
+          <label class="radio-opt"><input type="radio" name="followup"> Yes — please contact me</label>
+          <label class="radio-opt"><input type="radio" name="followup"> Yes, but only for specific opportunities (please specify below)</label>
+          <label class="radio-opt"><input type="radio" name="followup"> No — I prefer to remain anonymous</label>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">Your email address (if willing to be contacted)</div>
+        <input type="text" placeholder="name@organisation.org">
+      </div>
+
+      <div class="q-block">
+        <div class="q-label">Any other comments, resources, or recommendations you would like to share with this convening?</div>
+        <textarea placeholder="Open space for anything not covered above…"></textarea>
+      </div>
+    </div>
+
+    <div class="nav-row">
+      <button class="btn" onclick="goTo(2)">← Back</button>
+      <span class="page-indicator">Page 3 of 3</span>
+      <button class="btn btn-primary" onclick="alert('In the real Google Form, this submits responses. Thank you!')">Submit</button>
+    </div>
+    <div class="submit-note">By submitting, you agree that your responses may be used in aggregated reports from this convening.</div>
+  </div>
+</div>
+
+<script>
+const pages={1:{fill:'33%'},2:{fill:'66%'},3:{fill:'100%'}};
+function goTo(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+n).classList.add('active');
+  document.getElementById('prog-label').textContent='Page '+n+' of 3';
+  document.getElementById('prog-fill').style.width=pages[n].fill;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
