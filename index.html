@@ -57,11 +57,7 @@ select{appearance:none;background:transparent}
     <div class="section-card">
       <div class="section-title">Part 1 — Introduction & understanding the audience</div>
 
-      <div class="q-block">
-        <div class="q-label">Your full name <span class="q-required">*</span></div>
-        <input type="text" placeholder="First and last name">
-      </div>
-
+     
       <div class="q-block">
         <div class="q-label">Country you are based in <span class="q-required">*</span></div>
         <input type="text" placeholder="e.g. Uganda, Ghana, South Africa">
@@ -143,7 +139,7 @@ select{appearance:none;background:transparent}
       <div class="section-title">Part 2 — Datasets & research landscape</div>
 
       <div class="q-block">
-        <div class="q-label">Are you aware of any sign language datasets that exist for your country or region? <span class="q-required">*</span></div>
+        <div class="q-label">Are you aware of any sign language data/datasets that exist for your country or region? <span class="q-required">*</span></div>
         <div class="radio-group">
           <label class="radio-opt"><input type="radio" name="dataset-aware"> Yes</label>
           <label class="radio-opt"><input type="radio" name="dataset-aware"> No</label>
@@ -152,7 +148,7 @@ select{appearance:none;background:transparent}
       </div>
 
       <div class="q-block">
-        <div class="q-label">If yes, please name the dataset(s) and describe what they contain.</div>
+        <div class="q-label">If yes, please name the data/dataset(s) and describe what they contain.</div>
         <div class="q-hint">Include sign language name, country, type of data (video, glossary, annotations, etc.), and approximate size if known.</div>
         <textarea placeholder="Dataset name — what it contains — who created it — approximate scale…"></textarea>
       </div>
@@ -173,6 +169,10 @@ select{appearance:none;background:transparent}
           <label class="check-opt"><input type="checkbox"> Not publicly accessible</label>
           <label class="check-opt"><input type="checkbox"> I do not know the access conditions</label>
         </div>
+         <div class="q-block">
+        <div class="q-label">Explain</div>
+        <input type="url" placeholder="https://…">
+      </div>
       </div>
 
       <div class="q-block">
@@ -193,7 +193,13 @@ select{appearance:none;background:transparent}
 
     <div class="section-card">
       <div class="section-title">Data needs for innovators</div>
-
+      <div class="q-block">
+        <div class="q-label">Have you built or realised any innovation<span class="q-required">*</span></div>
+        <div class="radio-group">
+          <label class="radio-opt"><input type="radio" name="dataset-aware"> Yes</label>
+          <label class="radio-opt"><input type="radio" name="dataset-aware"> No</label>
+        </div>
+      </div>
       <div class="q-block">
         <div class="q-label">If you are building or have built an assistive tool, what kind of data did you need — and what did you have access to? <span class="q-required">*</span></div>
         <div class="q-hint">Please describe: the innovation you were building → the data type you needed → what you actually had access to.</div>
@@ -258,12 +264,24 @@ select{appearance:none;background:transparent}
           <label class="radio-opt"><input type="radio" name="followup"> No — I prefer to remain anonymous</label>
         </div>
       </div>
-
+    
+      
       <div class="q-block">
         <div class="q-label">Your email address (if willing to be contacted)</div>
         <input type="text" placeholder="name@organisation.org">
       </div>
 
+      
+      <div class="q-block">
+        <div class="q-label">Full Name</div>
+        <input type="text" placeholder="Ezekiel Maina">
+      </div>
+
+       <div class="q-block">
+        <div class="q-label">Your Afiliation</div>
+        <input type="text" placeholder="MCAAI Reseacrh lab">
+      </div>
+      
       <div class="q-block">
         <div class="q-label">Any other comments, resources, or recommendations you would like to share with this convening?</div>
         <textarea placeholder="Open space for anything not covered above…"></textarea>
